@@ -1,9 +1,5 @@
 /// <reference types="cypress" />
 
-/// <reference types="cypress-iframe" />
-
-
-import 'cypress-iframe'
 import HomePage from '../pageobject/HomePage'
 
 
