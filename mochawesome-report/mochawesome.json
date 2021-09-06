@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-09-05T22:07:31.879Z",
+    "end": "2021-09-05T22:08:07.003Z",
+    "duration": 35124,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9388d247-cca6-435b-b32a-0e4c7b9eea6c",
+      "title": "",
+      "fullFile": "cypress/integration/Greenkart/test2.js",
+      "file": "cypress/integration/Greenkart/test2.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "43eea9b3-6bc7-4aa0-b775-bbcd97d4566c",
+          "title": "validate the checkbox",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "validate all data",
+              "fullTitle": "validate the checkbox validate all data",
+              "timedOut": null,
+              "duration": 13525,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.qaclickacademy.com/'); // checkbox handle\ncy.get('#checkBoxOption1').check().should('be.checked').and('have.value', 'option1');\ncy.get('#checkBoxOption2').uncheck().should('not.be.checked');\ncy.get('input[type=\"checkbox\"]').check([\"option2\", \"option3\"]); //normal dropdown\ncy.get('select').select('option2').should('have.value', 'option2'); //dynamic dropdown\ncy.get('#autocomplete').type('ind');\ncy.get('.ui-menu-item div').each($e1 => {\n  if ($e1.text() === 'India') {\n    $e1.click();\n  }\n});\ncy.get('#autocomplete').should('have.value', 'India'); //deal with visible and invisible element\ncy.get('#displayed-text').should('be.visible');\ncy.get('#hide-textbox').click();\ncy.get('#displayed-text').should('not.be.visible');\ncy.get('#show-textbox').click();\ncy.get('#displayed-text').should('be.visible'); //radio button\ncy.get('input[type=\"radio\"]').check([\"radio1\"]).should('be.checked').and('have.value', 'radio1');\ncy.get('[value=\"radio2\"]').check().should('be.checked'); //alert popup automatically accept \ncy.get('#alertbtn').click();\ncy.get('[value=\"Confirm\"]').click(); //window alert for text verification\ncy.on('window:alert', str => {\n  expect(str).to.equal('Hello , share this practice page and share your knowledge');\n});\ncy.on('window:confirm', str => {\n  expect(str).to.equal(\"Hello , Are you sure you want to confirm?\");\n}); //tab handle cypress no concept of child window so for that remove target attribute so that it will open window in same page.\ncy.get('#opentab').invoke('removeAttr', 'target').click();\ncy.wait(5000);\ncy.url().should('include', 'rahulshettyacademy');\ncy.go('back');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `#checkBoxOption1`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `#checkBoxOption1`, but never found it.\n    at Context.eval (https://www.qaclickacademy.com/__cypress/tests?p=cypress/integration/Greenkart/test2.js:104:8)",
+                "diff": null
+              },
+              "uuid": "8e747b3d-0ae7-4fe7-8aeb-f30e4b7e36aa",
+              "parentUUID": "43eea9b3-6bc7-4aa0-b775-bbcd97d4566c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8e747b3d-0ae7-4fe7-8aeb-f30e4b7e36aa"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13525,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
