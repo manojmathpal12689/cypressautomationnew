@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node_modules//.bin//cypress run",
     "headTest":"npm run test -- --headed",
-    "chromeTest":"npm run test-- --browser chrome",
+    "chromeTest":"npm run test -- --browser chrome",
     "recordDashbaordTest":"npm run test -- --record --key 9bdb4959-17ea-4141-8ee9-5de8135655c2 --reporter mochawesome",
     "Greenkart":"npm run test -- --spec \"cypress/integration/Greenkart/*\"     "
   },
